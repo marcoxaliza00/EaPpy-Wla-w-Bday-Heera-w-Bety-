@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('1731253675936.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    #question {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+    .buttons {
+      margin: 10px;
+    }
+    button {
+      font-size: 1.1em;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #e91e63;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🎉 EapPy Wla'w Bday Alishba 🎂</h1>
+    <p style="font-size:1.2em;">"Born to shine, made to rule — today the universe celebrates YOU. 💫"</p>
+    <div id="question">Q1: Kya cake ke sath sath tumhara attitude bhi sweet hoga ya same 😌?</div>
+    <div class="buttons">
+      <button onclick="nextQuestion()">Yes</button>
+      <button onclick="tapyes()">No</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const questions = [
+      "Q2: Kya gift lena zaroori tha ya 1 reel se kaam chal jata? 📱",
+      "Q3: Kya birthday wishes chahiye ya tum already perfect ho? 💅",
+      "Q4: Kya tumhara hairstyle khud decide karta hai ya mood pe depend hai? 💇‍♂️",
+      "Q5: Kya bestie ka number dena har party ka rule hona chahiye? 😏",
+      "Q6: Kya tumhare jokes sirf tumhe funny lagte hain ya sach mein? 🤔",
+      "Q7: Kya tum birthday wale din serious ho jaate ho ya aur zyada drama? 🫣",
+      "Q8: Kya is baar ka gift emotional hoga ya phir meme-worthy? 😂",
+      "Q9: Kya ab itne sawal ke baad cake bacha bhi hai ya photo ke liye tha? 🎂",
+      "Q10: Kya tumhara swag recharge hota hai har saal birthday pe? 🔋"
+    ];
+    let index = 0;
+    const qBox = document.getElementById("question");
+
+    function nextQuestion() {
+      if (index < questions.length) {
+        qBox.innerHTML = questions[index];
+        index++;
+      } else {
+        qBox.innerHTML = "🫶 Bas karo ab! Itni attention mat lo... warna next saal entry paid ho gi 😌🎟️";
+      }
+    }
+
+    confetti({
+      particleCount: 300,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
+  </script>
+</body>
+</html>
